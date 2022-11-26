@@ -1,4 +1,4 @@
-# M2_SISE_PLSDA_R
+# sisepls
 
 PLS-DA: Partial Least Square Discriminant Analysis Regression
 
