@@ -2,18 +2,25 @@
 % Please edit documentation in R/summary_predict.R
 \name{summary_predict}
 \alias{summary_predict}
-\title{summary pls predict}
+\title{Predict quality}
 \usage{
-summary_predict(pls_predict)
+summary_predict(pls_predict, beta = 2)
 }
 \arguments{
-\item{pls_predict}{is an object}
+\item{pls_predict}{: list. Is the list returned with the predict_pls function.}
+
+\item{beta}{: float : used only for the binary case (Y target as two outcomes).
+Determines the weight of recall in the combined score.}
 }
 \value{
-confusion matrix
+confusion matrix and the Mattheus Correlation Coefficient (MCC).
 }
 \description{
-summary pls predict
+Compute the confusion matrix and a performance indicator.
+}
+\note{
+Becareful, for the binary case (the target variable has only two outcomes),
+please check that your "positive" outcome is situated in the first level of your factor
 }
 \examples{
 d<-train_test_split(iris,0.8)
@@ -22,4 +29,8 @@ test<-d$data_test
 res<-fit_pls(Species~.,train,3)
 pred<-predict_pls(res,test,2)
 summary_predict(pred)
+
+}
+\references{
+GRANDINI M., BAGLI E., VISANI G., "METRICS FOR MULTI-CLASS CLASSIFICATION: AN OVERVIEW"
 }

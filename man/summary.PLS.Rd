@@ -2,20 +2,28 @@
 % Please edit documentation in R/summary.pls.R
 \name{summary.PLS}
 \alias{summary.PLS}
-\title{Summary}
+\title{Summarizing PLS-DA fits}
 \usage{
-\method{summary}{PLS}(object, ...)
+\method{summary}{PLS}(x, ...)
 }
 \arguments{
-\item{object}{S3 class PLS}
+\item{x}{: object of class S3 inheriting from "PLS".}
 
-\item{...}{other parameters}
+\item{...}{: other parameters.}
 }
 \value{
-summary
+summary returns a list containing the following components for each level of the categorical variable:
+
+all coefficients and constant of the PLS Regression for models with 1,...,n_components.
+
+data frame of correlation between each component and all the variables (explanatory and target)
+
+data frame of correlation squared between each component and all the variables (explanatory and target)
+
+data frame of Q2 values for models with 1, . . . , n_components.
 }
 \description{
-Summary
+summary method for class "PLS".
 }
 \examples{
 summary(fit_pls(Species~.,iris,n_components=2))

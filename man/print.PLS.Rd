@@ -2,20 +2,34 @@
 % Please edit documentation in R/print.pls.R
 \name{print.PLS}
 \alias{print.PLS}
-\title{Print PLS}
+\title{Printing PLS-DA Fits}
 \usage{
 \method{print}{PLS}(x, ...)
 }
 \arguments{
-\item{x}{is a class S3}
+\item{x}{: object of class S3 inheriting from "PLS".}
 
-\item{...}{other parameters}
+\item{...}{: other parameters.}
 }
 \value{
-print all the matrix Ah, ...
+print returns a list containing the following components for each level of the categorical variable:
+
+data frame of RSS values for models with 1, . . . , n_components.
+
+data frame of PRESS values for models with 1, . . . , n_components.
+
+data frame of Wh values for models with 1, . . . , n_components.
+
+data frame of Ch values for models with 1, . . . , n_components.
+
+data frame of Ph values for models with 1, . . . , n_components.
+
+data frame of Wh* values for models with 1, . . . , n_components.
+
+data frame of Ah values for models with 1, . . . , n_components.
 }
 \description{
-Print PLS
+Printing PLS-DA Fits
 }
 \examples{
 print(fit_pls(Species~.,iris,n_components=4))

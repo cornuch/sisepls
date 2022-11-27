@@ -2,23 +2,32 @@
 % Please edit documentation in R/plot_individuals.R
 \name{plot_individuals}
 \alias{plot_individuals}
-\title{plot}
+\title{Maps of individuals}
 \usage{
 plot_individuals(objet_pls, i = 1, j = 1)
 }
 \arguments{
-\item{objet_pls}{is class S3}
+\item{objet_pls}{: object of class S3 inheriting from "PLS".}
 
-\item{i}{integer}
+\item{i}{: integer, default=1. It is the index of the outcome to be selected.}
 
-\item{j}{integer}
+\item{j}{: integer, default=1. It is the index of the components to be selected.}
 }
 \value{
 plot
 }
 \description{
-plot
+Plots the individuals in relation with one component and u1. The details of u1 are given under ‘Details’.
+}
+\details{
+Regression of y on the first component th1.
+y=c1*th1+y1
+
+u1 is the normalization of y : u1=y/c1
+
+It allows us to obtain the first bisector as the least squares line of u1 on th1.
 }
 \examples{
 plot_individuals(fit_pls(Species~.,iris,n_components=4),i=2,j=1)
+
 }

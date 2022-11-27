@@ -12,7 +12,7 @@
 
 dummy<-function(Y){
 
-  #Check if the
+  #Check if the target variable is a factor
   if (is.factor(Y)==FALSE){
     stop("The variable must be a factor")
   }else{

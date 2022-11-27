@@ -2,18 +2,20 @@
 % Please edit documentation in R/plot_Q2.R
 \name{plot_Q2}
 \alias{plot_Q2}
-\title{PLot Q2}
+\title{Q2 plot}
 \usage{
 plot_Q2(objet_pls)
 }
 \arguments{
-\item{objet_pls}{is a class S3}
+\item{objet_pls}{: object of class S3 inheriting from "PLS".}
 }
 \value{
-a plot
+the graph of the Q2 values for all the strategies one versus all.
+
+A threshold of 0.0975 is drawn in red on the graph.
 }
 \description{
-PLot Q2
+Plots the Q2 values for all the outcomes and the number of components selected previously.
 }
 \examples{
 plot_Q2(fit_pls(Species~.,iris,n_components=4))

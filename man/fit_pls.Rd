@@ -9,61 +9,67 @@ fit_pls(formule, data, n_components = 2)
 \arguments{
 \item{formule}{: object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted.}
 
-\item{data}{: data frame. The data source containing all the variables specified in the formula.}
+\item{data}{: data frame. The data train source containing all the variables specified in the formula. 'Na's are not allowed.}
 
-\item{n_components}{: integer, default=2. Number of components to keep. Should be between 1 and the min(n_samples, n_features, n_targets).}
+\item{n_components}{: integer, default=2. Number of components to keep. Should be between 1 and the max(n_features).}
 }
 \value{
-object of class "PLS" is a list containing the following components for each level of the categorial variable:
+object of class "PLS" is a list containing the following components for each level of the categorical variable:
 
-formula : The formula given.
+formula : object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted. The details of model specification are given under ‘Details’.
 
-X : the explanatory variables (a set of continuous variables).
+X : explanatory variables (a set of continuous variables).
 
-Y : the target variable (a discrete variable).
+Y : target variable (a discrete variable).
 
-Ydum : the dummy-coded matrix linked to the target variable.
+Ydum : dummy-coded matrix linked to the target variable.
 
-n_components : the number of components kept.
+n_components : number of components included in the model.
 
-Components : a data frame containing the components "th" values for models with 1,...,n_components. Each row corresponds to one individual.
+Components : data frame containing the components "th" values for models with 1,...,n_components. Each row corresponds to one individual.
 
-Features_Weights : a data frame containing the weights "wh" values for models with 1,...,n_components. Each row corresponds to one feature.
+Features_Weights : data frame containing the weights "wh" values for models with 1,...,n_components. Each row corresponds to one feature.
 
-Coefs_yresiduals_comp : a matrix of coefficients "ch" values for models with 1,...,n_components.
+Coefs_yresiduals_comp : matrix of coefficients "ch" values for models with 1,...,n_components.
 
-Coefficients_xresiduals_components : a data frame containing the "ph" values for models with 1,...,n_components. Each row corresponds to one feature.
+Coefficients_xresiduals_components : data frame containing the "ph" values for models with 1,...,n_components. Each row corresponds to one feature.
 
-y_residuals : a data frame containing the "yh" residuals values for models with 1,...,n_components. Each row corresponds to one individual.
+y_residuals : data frame containing the "yh" residuals values for models with 1,...,n_components. Each row corresponds to one individual.
 
-W_star : a data frame containing the weights "w*h" values for models with 1,...,n_components. Each row corresponds to one feature.
+W_star : data frame containing the weights "w*h" values for models with 1,...,n_components. Each row corresponds to one feature.
 
-ah : a data frame containing the "ah" coefficients for the regression for models with 1,...,n_components. Each row corresponds to one feature.
+ah : data frame containing the "ah" coefficients for the regression for models with 1,...,n_components. Each row corresponds to one feature.
 
-u1 : u1,
+u1 : standardization of y (u1=y/c1)
 
-Coefs_regression : Coefs,
+Coefs_regression : coefficients of the PLS regression for models with 1,...,n_components. Each row corresponds to one feature.
 
-Constant_regression : constant,
+Constant_regression : constant of the PLS Regression for models with 1,...,n_components.
 
-all_coefs_regression : Coefs_df,
+all_coefs_regression : all coefficients and constant of the PLS Regression for models with 1,...,n_components.
 
-Matrix_correlation : Cor_var_df,
+Matrix_correlation : data frame of correlation between each component and all the variables (explanatory and target)
 
-RSS : RSS,
+RSS : matrix of PRESS values for models with 1, . . . , n_components.
 
-PRESS : a matrix of PRESS values for models with 1, . . . , n_components.
+PRESS : matrix of PRESS values for models with 1, . . . , n_components.
 
-Q2 : Q2
+Q2 : matrix of Q2 values for models with 1, . . . , n_components.
 }
 \description{
 Fit a PLS-DA Regression.
-The PLS-DA is a statistical method used to find the relation between a set of explanatories quantitatives variables and a categorial target variable.
+The PLS-DA is a statistical method used to find the relation between a set of explanatory quantitative variables and a categorical target variable.
 }
 \details{
 The PLS-DA used consist in a PLS1 Regression.
 
 If the discrete target variable has more than two outcomes, the PLS1 regression is applied on each levels of the categorial variable and using a one versus rest strategy.
+
+Formula:
+
+A typical predictor has the form response ~ terms where response is the factor response vector and terms is a series of terms which specifies a PLS-DA predictor for response.
+
+A terms specification of the form first + second indicates all the terms in first together with all the terms in second with any duplicates removed.
 }
 \examples{
 d<-train_test_split(iris,0.7)
@@ -80,4 +86,6 @@ TENENHAUSS M., "La régression PLS - Théorie et pratique", Editions Technip
 WOLD H. (1985), "Partial Least Squares", in Encyclopedia of Statistical Sciences, vol. 6, Kotz, S & Jonhson, N.L (Eds), John Wiley & Sons, New York, pp.581-591
 
 CHAVENT M. and PATOUILLE B, "Calcul des coefficients de regression et du PRESS en régression PLS1"
+
+Abdi H (2010). Partial least squares regression and projection on latent structure regression (PLS Regression). Wiley Interdisciplinary Reviews: Computational Statistics, 2(1), 97-106.
 }

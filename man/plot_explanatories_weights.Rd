@@ -2,20 +2,20 @@
 % Please edit documentation in R/plot_explanatories_weights.R
 \name{plot_explanatories_weights}
 \alias{plot_explanatories_weights}
-\title{PLot correlation}
+\title{Features weights}
 \usage{
 plot_explanatories_weights(objet_pls, i = 1)
 }
 \arguments{
-\item{objet_pls}{if a class S3}
+\item{objet_pls}{: object of class S3 inheriting from "PLS".}
 
-\item{i}{is an integer between 1 and the number of outcoms for the target variable}
+\item{i}{: integer, default=1. It is the index of the outcome to be selected.}
 }
 \value{
-plot
+a scatter plot of the weights of each features for the first and second component for a selected outcome.
 }
 \description{
-PLot correlation
+Plots the weights of each features for the first and second component
 }
 \examples{
 plot_explanatories_weights(fit_pls(Species~.,iris,n_components=4),i=2)

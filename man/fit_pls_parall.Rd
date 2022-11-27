@@ -2,25 +2,92 @@
 % Please edit documentation in R/fit_pls_parall.R
 \name{fit_pls_parall}
 \alias{fit_pls_parall}
-\title{Regression PLS for a data frame}
+\title{Partial Least Square Discriminant Analysis Regression}
 \usage{
-fit_pls_parall(formule, data, n_components = 2, n_cores = 1)
+fit_pls_parall(formule, data, n_components = 2, parallele = TRUE)
 }
 \arguments{
-\item{formule}{is a formula}
+\item{formule}{: object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted.}
 
-\item{data}{is a data frame}
+\item{data}{: data frame. The data source containing all the variables specified in the formula. 'NA's are not allowed.}
 
-\item{n_components}{is an integer}
+\item{n_components}{: integer, default=2. Number of components to keep. Should be between 1 and the max(n_features).}
 
-\item{n_cores}{is and integer}
+\item{parallele}{: bool, default=TRUE.}
 }
 \value{
-the matrix Wh, Ah, etc
+object of class "PLS" is a list containing the following components for each level of the categorical variable:
+
+formula : object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted. The details of model specification are given under ‘Details’.
+
+X : explanatory variables (a set of continuous variables).
+
+Y : target variable (a discrete variable).
+
+Ydum : dummy-coded matrix linked to the target variable.
+
+n_components : number of components included in the model.
+
+Components : data frame containing the components "th" values for models with 1,...,n_components. Each row corresponds to one individual.
+
+Features_Weights : data frame containing the weights "wh" values for models with 1,...,n_components. Each row corresponds to one feature.
+
+Coefs_yresiduals_comp : matrix of coefficients "ch" values for models with 1,...,n_components.
+
+Coefficients_xresiduals_components : data frame containing the "ph" values for models with 1,...,n_components. Each row corresponds to one feature.
+
+y_residuals : data frame containing the "yh" residuals values for models with 1,...,n_components. Each row corresponds to one individual.
+
+W_star : data frame containing the weights "w*h" values for models with 1,...,n_components. Each row corresponds to one feature.
+
+ah : data frame containing the "ah" coefficients for the regression for models with 1,...,n_components. Each row corresponds to one feature.
+
+u1 : standardization of y (u1=y/c1)
+
+Coefs_regression : coefficients of the PLS regression for models with 1,...,n_components. Each row corresponds to one feature.
+
+Constant_regression : constant of the PLS Regression for models with 1,...,n_components.
+
+all_coefs_regression : all coefficients and constant of the PLS Regression for models with 1,...,n_components.
+
+Matrix_correlation : data frame of correlation between each component and all the variables (explanatory and target)
+
+RSS : matrix of PRESS values for models with 1, . . . , n_components.
+
+PRESS : matrix of PRESS values for models with 1, . . . , n_components.
+
+Q2 : matrix of Q2 values for models with 1, . . . , n_components.
 }
 \description{
-Regression PLS for a data frame
+Fit a PLS-DA Regression.
+The PLS-DA is a statistical method used to find the relation between a set of explanatories quantitatives variables and a categorial target variable.
+}
+\details{
+The PLS-DA used consist in a PLS1 Regression.
+
+If the discrete target variable has more than two outcomes, the PLS1 regression is applied on each levels of the categorial variable and using a one versus rest strategy.
+
+Formula:
+
+A typical predictor has the form response ~ terms where response is the factor response vector and terms is a series of terms which specifies a PLS-DA predictor for response.
+
+A terms specification of the form first + second indicates all the terms in first together with all the terms in second with any duplicates removed.
 }
 \examples{
-fit_pls_parall(Species~.,iris,n_components=4,n_cores=1)
+d<-train_test_split(iris,0.7)
+train<-d$data_train
+objet_pls<-fit_pls_parall(Species~.,train,n_components=4,parallele=FALSE)
+objet_pls[[1]]$all_coefs_regression
+objet_pls[[2]]$all_coefs_regression
+objet_pls[[3]]$all_coefs_regression
+
+}
+\references{
+TENENHAUSS M., "La régression PLS - Théorie et pratique", Editions Technip
+
+WOLD H. (1985), "Partial Least Squares", in Encyclopedia of Statistical Sciences, vol. 6, Kotz, S & Jonhson, N.L (Eds), John Wiley & Sons, New York, pp.581-591
+
+CHAVENT M. and PATOUILLE B, "Calcul des coefficients de regression et du PRESS en régression PLS1"
+
+Abdi H (2010). Partial least squares regression and projection on latent structure regression (PLS Regression). Wiley Interdisciplinary Reviews: Computational Statistics, 2(1), 97-106.
 }

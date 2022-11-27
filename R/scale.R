@@ -29,9 +29,9 @@ xscale<-function(X,reduce=TRUE){
   #corresponding to the column where the coefficient is situated
   X_scale<-apply(X,2,function(x){return(x-mean(x))})
 
-  #Reduce the coefficients of the matrix if reduce is TRUE
+  #Reduce the coefficients of the matrix if reduce is equal to TRUE
   if(reduce==TRUE){
-    #check if some columns have a standard deviation equal to 0
+    #Check if some columns have a standard deviation equal to 0
     stdev<-apply(X,2,sd)
     for (i in 1:ncol(X)){
       if (stdev[i]==0){

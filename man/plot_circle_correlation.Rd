@@ -2,18 +2,18 @@
 % Please edit documentation in R/plot_circle_correlation.R
 \name{plot_circle_correlation}
 \alias{plot_circle_correlation}
-\title{Plotting the circle of correlation for explanatories variables}
+\title{Circle of correlation}
 \usage{
 plot_circle_correlation(objet_pls)
 }
 \arguments{
-\item{objet_pls}{is a class S3}
+\item{objet_pls}{: object of class S3 inheriting from "PLS".}
 }
 \value{
-the plot
+the graph of the circle of correlation for all the features.
 }
 \description{
-Plotting the circle of correlation for explanatories variables
+Plots the circle of correlation
 }
 \examples{
 plot_circle_correlation(fit_pls(Species~.,iris,n_components=4))

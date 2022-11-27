@@ -2,22 +2,27 @@
 % Please edit documentation in R/predict_pls.R
 \name{predict_pls}
 \alias{predict_pls}
-\title{predictions}
+\title{Predict}
 \usage{
 predict_pls(objet_pls, newdata, type = 1)
 }
 \arguments{
-\item{objet_pls}{is class S3}
+\item{objet_pls}{: object of class S3 inheriting from "PLS".}
 
-\item{newdata}{is a data frame}
+\item{newdata}{: data frame. The data test source containing all the variables specified in the formula. 'Na's are not allowed.}
 
-\item{type}{1 pour ou 2}
+\item{type}{: integer equal to 1 or 2. 1 to predict the class and 2 in order to add the estimation of the class membership probabilities.}
 }
 \value{
-predictions
+a list of predicted class and the estimation of the class membership probabilities if type=2.
 }
 \description{
-predictions
+Predicts the class of an individuals given the results of the PLS-DA model fitting function.
+}
+\note{
+The softmax function is used for the estimation of the class membership probabilities if type=2.
+
+The argmax is used to predict the class.
 }
 \examples{
 d<-train_test_split(iris,0.8)
@@ -25,4 +30,5 @@ train<-d$data_train
 test<-d$data_test
 res<-fit_pls(Species~.,train,3)
 predict_pls(res,test,2)
+
 }
