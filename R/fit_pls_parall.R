@@ -58,7 +58,7 @@
 #' @export
 #'
 #' @examples
-#' d<-train_test_split(iris,0.7)
+#' d<-train_test_splits(iris,0.7)
 #' train<-d$data_train
 #' objet_pls<-fit_pls_parall(Species~.,train,n_components=4,parallele=FALSE)
 #' objet_pls[[1]]$all_coefs_regression
@@ -142,7 +142,7 @@ fit_pls_parall<-function(formule,data,n_components=2,parallele=TRUE){
   n<-nlevels(Y)
 
   #Transform the categorical target variable in a dummy matrix
-  Y_dummy<-dummy(Y)
+  Y_dummy<-ydummy(Y)
 
   #scale matrix X and dummy matrix
   X0<-xscale(X)

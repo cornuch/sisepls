@@ -25,10 +25,10 @@ The softmax function is used for the estimation of the class membership probabil
 The argmax is used to predict the class.
 }
 \examples{
-d<-train_test_split(iris,0.8)
+d<-train_test_splits(iris,0.8)
 train<-d$data_train
 test<-d$data_test
-res<-fit_pls(Species~.,train,3)
+res<-fit_pls(Species~.,train,n_components=3)
 predict_pls(res,test,2)
 
 }

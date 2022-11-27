@@ -12,7 +12,10 @@
 #' @export
 #'
 #' @examples
-#' plot_individuals(fit_pls(Species~.,iris,n_components=4),i=2,j=1)
+#' d<-train_test_splits(iris,0.7)
+#' train<-d$data_train
+#' objet<-fit_pls(Species~.,train,n_components=4)
+#' plot_individuals(objet,i=2,j=1)
 #'
 #' @details
 #' Regression of y on the first component th1.

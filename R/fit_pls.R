@@ -54,12 +54,16 @@
 #' @export
 #'
 #' @examples
-#' d<-train_test_split(iris,0.7)
+#' d<-train_test_splits(iris,0.7)
 #' train<-d$data_train
 #' objet_pls<-fit_pls(Species~.,train,n_components=4)
 #' objet_pls[[1]]$all_coefs_regression
 #' objet_pls[[2]]$all_coefs_regression
 #' objet_pls[[3]]$all_coefs_regression
+#'
+#' m<-train_test_splits(iris,0.8)
+#' trains<-m$data_train
+#' fit_pls(Species~Petal.Length+Sepal.Length+Sepal.Width,trains,n_components=2)
 #'
 #' @details
 #' The PLS-DA used consist in a PLS1 Regression.
@@ -133,7 +137,7 @@ fit_pls<-function(formule,data,n_components=2){
   }
 
   #Transform the categorical target variable in a dummy matrix
-  Y_dummy<-dummy(Y)
+  Y_dummy<-ydummy(Y)
 
   #scale matrix X and dummy matrix
   X0<-xscale(X)

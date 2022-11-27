@@ -74,7 +74,7 @@ A typical predictor has the form response ~ terms where response is the factor r
 A terms specification of the form first + second indicates all the terms in first together with all the terms in second with any duplicates removed.
 }
 \examples{
-d<-train_test_split(iris,0.7)
+d<-train_test_splits(iris,0.7)
 train<-d$data_train
 objet_pls<-fit_pls_parall(Species~.,train,n_components=4,parallele=FALSE)
 objet_pls[[1]]$all_coefs_regression

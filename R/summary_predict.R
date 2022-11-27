@@ -10,10 +10,10 @@
 #' @export
 #'
 #' @examples
-#' d<-train_test_split(iris,0.8)
+#' d<-train_test_splits(iris,0.8)
 #' train<-d$data_train
 #' test<-d$data_test
-#' res<-fit_pls(Species~.,train,3)
+#' res<-fit_pls(Species~.,train,n_components=3)
 #' pred<-predict_pls(res,test,2)
 #' summary_predict(pred)
 #'
@@ -83,6 +83,14 @@ summary_predict<-function(pls_predict,beta=2){
     print(conf_mat)
 
     cat("Mattheus Correlation Coefficient for Multi-class Classification : ", MCC,"\n")
+
+    cat("Precision : ", precision_m,"\n")
+
+    cat("Recall : ", recall_m,"\n")
+
+    cat("F1-score : ", f1score,"\n")
+
+    cat("rate error : ", err,"\n")
 
   }else{
     #initialization of confusion matrix

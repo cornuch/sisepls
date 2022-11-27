@@ -12,10 +12,10 @@
 #' @export
 #'
 #' @examples
-#' d<-train_test_split(iris,0.8)
+#' d<-train_test_splits(iris,0.8)
 #' train<-d$data_train
 #' test<-d$data_test
-#' res<-fit_pls(Species~.,train,3)
+#' res<-fit_pls(Species~.,train,n_components=3)
 #' predict_pls(res,test,2)
 #'
 #' @note The softmax function is used for the estimation of the class membership probabilities if type=2.
@@ -54,7 +54,7 @@ predict_pls<-function(objet_pls,newdata,type=1){
   }
 
   #Transform the categorical target variable in a dummy matrix
-  Y_dummy<-dummy(Y)
+  Y_dummy<-ydummy(Y)
   X<-as.matrix(X)
 
   #Create the names of columns for the data frame predicts

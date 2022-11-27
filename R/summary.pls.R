@@ -18,7 +18,17 @@
 #' @export
 #'
 #' @examples
-#' summary(fit_pls(Species~.,iris,n_components=2))
+#' d<-train_test_splits(iris,0.7)
+#' train<-d$data_train
+#' objet<-fit_pls(Species~.,train,n_components=4)
+#' summary(objet)
+#' summary(objet)$R2
+#'
+#' m<-train_test_splits(iris,0.8)
+#' train1<-m$data_train
+#' obj<-fit_pls(Species~Petal.Length+Sepal.Width,train1,n_components=2)
+#' summary(obj)
+#' summary(objet)$Coefs
 
 summary.PLS<-function(x, ...){
   objet_pls<-x
@@ -29,7 +39,7 @@ summary.PLS<-function(x, ...){
   coefsall<-data.frame(matrix(ncol=0,nrow=r))
   corall<-objet_pls[[1]]$Matrix_correlation
   r2all<-(objet_pls[[1]]$Matrix_correlation)^2
-  Q2all<-objet_pls[[1]]$Q2
+  Q2all<-as.data.frame(objet_pls[[1]]$Q2)
 
   #Names of columns for Q2 data frame
   colQ2<-c()
@@ -46,14 +56,14 @@ summary.PLS<-function(x, ...){
   for (k in 2:ncol(Y_dummy)){
     corall<-cbind(corall,objet_pls[[k]]$Matrix_correlation)
     r2all<-cbind(r2all,(objet_pls[[k]]$Matrix_correlation)^2)
-    Q2all<-rbind(Q2all,objet_pls[[k]]$Q2)
+    Q2all<-rbind(Q2all,as.data.frame(objet_pls[[k]]$Q2))
   }
 
   #name of the columns for the regression coefficients data frame
   names(coefsall)<-colnames(Y_dummy)
 
   #Tansform the matrix in a data frame
-  Q2all<-as.data.frame(Q2all)
+  #Q2all<-as.data.frame(Q2all)
   #Names of the columns of this data frame
   names(Q2all)<-colQ2
 

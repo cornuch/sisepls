@@ -22,7 +22,17 @@
 #' @export
 #'
 #' @examples
-#' print(fit_pls(Species~.,iris,n_components=4))
+#' d<-train_test_splits(iris,0.7)
+#' train<-d$data_train
+#' objet<-fit_pls(Species~.,train,n_components=4)
+#' print(objet)
+#' summary(objet)$RSS
+#'
+#' m<-train_test_splits(iris,0.8)
+#' train1<-m$data_train
+#' obj<-fit_pls(Species~Petal.Length+Sepal.Width,train1,n_components=2)
+#' summary(obj)
+#' summary(objet)$Ah
 
 print.PLS<-function(x,...){
   objet_pls<-x
@@ -31,12 +41,12 @@ print.PLS<-function(x,...){
 
   #initialization of matrices
   Whall<-objet_pls[[1]]$Features_Weights
-  Chall<-objet_pls[[1]]$Coefs_yresiduals_comp
+  Chall<-as.data.frame(objet_pls[[1]]$Coefs_yresiduals_comp)
   Phall<-objet_pls[[1]]$Coefficients_xresiduals_components
   Whstar<-objet_pls[[1]]$W_star
   Ahall<-objet_pls[[1]]$ah
-  RSSall<-objet_pls[[1]]$RSS
-  PRESSall<-objet_pls[[1]]$PRESS
+  RSSall<-as.data.frame(objet_pls[[1]]$RSS)
+  PRESSall<-as.data.frame(objet_pls[[1]]$PRESS)
 
   #Names of columns for Ch, RSS and PRESS data frame
   colonne<-c()
@@ -47,18 +57,18 @@ print.PLS<-function(x,...){
   #Aggregating the results
   for (j in 2:ncol(Y_dummy)){
     Whall<-cbind(Whall,objet_pls[[j]]$Features_Weights)
-    Chall<-rbind(Chall,objet_pls[[j]]$Coefs_yresiduals_comp)
+    Chall<-rbind(Chall,as.data.frame(objet_pls[[j]]$Coefs_yresiduals_comp))
     Phall<-cbind(Phall,objet_pls[[j]]$Coefficients_xresiduals_components)
     Whstar<-cbind(Whstar,objet_pls[[j]]$W_star)
     Ahall<-cbind(Ahall,objet_pls[[j]]$ah)
-    RSSall<-rbind(RSSall,objet_pls[[j]]$RSS)
-    PRESSall<-rbind(PRESSall,objet_pls[[j]]$PRESS)
+    RSSall<-rbind(RSSall,as.data.frame(objet_pls[[j]]$RSS))
+    PRESSall<-rbind(PRESSall,as.data.frame(objet_pls[[j]]$PRESS))
   }
 
   #Transform matrix in data frame
-  Chall<-as.data.frame(Chall)
-  PRESSall<-as.data.frame(PRESSall)
-  RSSall<-as.data.frame(RSSall)
+  # Chall<-as.data.frame(Chall)
+  # PRESSall<-as.data.frame(PRESSall)
+  # RSSall<-as.data.frame(RSSall)
   #Give a columns name
   names(Chall)<-colonne
   names(RSSall)<-colonne

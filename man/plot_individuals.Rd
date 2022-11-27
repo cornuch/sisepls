@@ -28,6 +28,9 @@ u1 is the normalization of y : u1=y/c1
 It allows us to obtain the first bisector as the least squares line of u1 on th1.
 }
 \examples{
-plot_individuals(fit_pls(Species~.,iris,n_components=4),i=2,j=1)
+d<-train_test_splits(iris,0.7)
+train<-d$data_train
+objet<-fit_pls(Species~.,train,n_components=4)
+plot_individuals(objet,i=2,j=1)
 
 }

@@ -23,10 +23,10 @@ Becareful, for the binary case (the target variable has only two outcomes),
 please check that your "positive" outcome is situated in the first level of your factor
 }
 \examples{
-d<-train_test_split(iris,0.8)
+d<-train_test_splits(iris,0.8)
 train<-d$data_train
 test<-d$data_test
-res<-fit_pls(Species~.,train,3)
+res<-fit_pls(Species~.,train,n_components=3)
 pred<-predict_pls(res,test,2)
 summary_predict(pred)
 

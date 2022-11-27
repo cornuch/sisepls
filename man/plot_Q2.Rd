@@ -18,5 +18,8 @@ A threshold of 0.0975 is drawn in red on the graph.
 Plots the Q2 values for all the outcomes and the number of components selected previously.
 }
 \examples{
-plot_Q2(fit_pls(Species~.,iris,n_components=4))
+d<-train_test_splits(iris,0.7)
+train<-d$data_train
+objet<-fit_pls(Species~.,train,n_components=4)
+plot_Q2(objet)
 }
