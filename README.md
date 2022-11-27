@@ -27,7 +27,9 @@ Now you can access all available functions of the package.
    
 To prove it, we will display the documentation of our fit function. you can write in your console: ?fit_pls to see the documentation or:
 
-   help(fit_pls)
+```
+help(fit_pls)
+```
 
 Here are the different functionalities of our package that we will present in the following lines: 
   
