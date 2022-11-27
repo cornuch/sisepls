@@ -21,9 +21,9 @@ install_github("cornuch/sisepls")
 
 Once the package is downloaded and successfully installed, please load it for use.
 
----
-library(sisepls)
----
+
+(>) library(sisepls)
+
 
 Now you can access all available functions of the package. 
    
