@@ -11,7 +11,7 @@ This project is part of our training in Data Science at the University of Lyon 2
 Partial Least Squares Disriminant Analysis regression (PLS) is often used when there are a lot of explanatory continuous variables, possibly correlated and where the target variable Y is discrete (categorial).Partial Least Squares regression (PLS) is an efficient and optimal regression method based on covariance. 
 
 
-# Installation and data loadings
+## Installation and data loadings
 
 In order to use our package, you should install it from Github.
 ```
@@ -36,7 +36,7 @@ to see the documentation or:
 help(fit_pls)
 ```
 
-Here are the different functionalities of our package that we will present in the following lines: 
+## Functionalities of our package 
   
     train_test_splits:  
     fit_pls:
