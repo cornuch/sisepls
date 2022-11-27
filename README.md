@@ -6,7 +6,10 @@ DESCRIPTION
 
 This project is part of our training in Data Science at the University of Lyon 2. The main objective is to develop an R package under S3 that allows to do a Partial Least Square Discriminant Analysis. 
 
-Partial Least Square Discriminant Analysis (expliquer ce que c'est que cette méthode) 
+Partial Least Square Discriminant Analysis
+
+Partial Least Squares Disriminant Analysis regression (PLS) is often used when there are a lot of explanatory continuous variables, possibly correlated and where the target variable Y is discrete (categorial).
+Partial Least Squares regression (PLS) is an efficient and optimal regression method based on covariance. 
 
 Here are the different functionalities of our package that we will present in the following lines: (explique ce que font ces fonctions)
   
