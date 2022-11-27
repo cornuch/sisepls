@@ -1,4 +1,4 @@
-## sisepls
+# sisepls
 
 PLS-DA: Partial Least Square Discriminant Analysis Regression
 
@@ -22,7 +22,7 @@ Here are the different functionalities of our package that we will present in th
     predict_pls
     summary_predict
 
-# How to install the package
+# Install package and help
 
 In order to use our package, you should install it from Github.
 
