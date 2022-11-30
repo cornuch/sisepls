@@ -35,6 +35,10 @@ to see the documentation or:
 ```
 help(fit_pls)
 ```
+## App access
+
+https://kwec.shinyapps.io/sisePLS/
+
 
 ## Functionalities of our package 
   
