@@ -8,6 +8,7 @@
 #' @param n_components : integer, default=2. Number of components to keep. Should be between 1 and the max(n_features).
 #'
 #' @importFrom stats formula as.formula model.frame cor
+#' @importFrom plyr is.formula
 #'
 #' @return object of class "PLS" is a list containing the following components for each level of the categorical variable:
 #'
@@ -92,10 +93,10 @@ fit_pls<-function(formule,data,n_components=2){
     stop("fit_pls requires a formula and a data frame. Moreover n_components should be an integer greater than 0")
   }
 
-   # # Check of the inputs
-   # if(!is.formula(formule)){
-   #   stop("formula must be of type formula")
-   # }
+   # Check of the inputs
+   if(!is.formula(formule)){
+     stop("formula must be of type formula")
+   }
 
   #Check if the data source is a data frame
   if(!is.data.frame(data)){

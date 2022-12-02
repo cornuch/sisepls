@@ -9,5 +9,5 @@ usethis::use_package("doParallel")
 usethis::use_package("parallel")
 usethis::use_package("foreach")
 usethis::use_package("grDevices")
-#usethis::use_package("plry")
+usethis::use_package("plyr")
 
