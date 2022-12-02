@@ -40,3 +40,4 @@ to see the documentation or:
 ```
 help(fit_pls)
 ```
+You can access to the R-Shiny application for interactive analysis using this link : <https://kwec.shinyapps.io/sisePLS/>
