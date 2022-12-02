@@ -56,26 +56,23 @@ In order to test our functions, we will work with the iris dataset. It consists 
 
    3.1- `train_test_splits` : The train_test_splits function takes a data frame and returns two data frames (one data frame containing the 
         training data set $data_train and the test data $data_test randomly drawn). The parameter is the percentage of data from the data frame taken to    
-        construct the training dataset.
-        
-        `
-        d<-train_test_splits(irirs,0.8)
-        train<-d$data
+        construct the training dataset.        
+```  
+d<-train_test_splits(irirs,0.8)
+train<-d$data
         test<-d$data_test
         `
         
    3.2- `fit_pls` : This function uses a PLS-DA statistical method to find the relation between a set of explanatory quantitative variables and a categorical 
-        target variable in a one-versus-all  
+        target variable in a one-versus-all. We have overloaded the print and summary methods for a display adapted to our objects returned by fit.
         
-        We have overloaded the print and summary methods for a display adapted to our objects returned by fit.
-        
-        `
+
         objet<-fit_pls(Species~.,train,n_components=3)
         summary(objet)
         print(objet)
-        `
+
         
-        We can also some graphs that you can visualize using our R-Shiny
+        We can also see some graphs using our R-Shiny application.
    
    3.3- `predict_pls` : This function gives the predicted class for an observation and also the propabilities 
    
