@@ -62,6 +62,7 @@ d<-train_test_splits(irirs,0.8)
 train<-d$data
 test<-d$data_test
 ```
+        https://github.com/cornuch/sisepls/issues/1#issue-1473523416
         
    3.2- `fit_pls` : This function uses a PLS-DA statistical method to find the relation between a set of explanatory quantitative variables and a categorical 
         target variable in a one-versus-all. We have overloaded the print and summary methods for a display adapted to our objects returned by fit.
