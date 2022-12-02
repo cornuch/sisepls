@@ -58,7 +58,11 @@ In order to test our functions, we will work with the iris dataset. It consists 
         training data set $data_train and the test data $data_test randomly drawn). The parameter is the percentage of data from the data frame taken to    
         construct the training dataset.
         
-        ![alt text](https://drive.google.com/drive/folders/1QUJdaSYCiAOOcOCigIV9CQUDz05K4Jfl/split.png)
+        ```bash
+        d<-train_test_splits(irirs,0.8)
+        train<-d$data
+        test<-d$data_test
+        ```
         
    3.2- `fit_pls` : This function uses a PLS-DA statistical method to find the relation between a set of explanatory quantitative variables and a categorical 
         target variable. 
