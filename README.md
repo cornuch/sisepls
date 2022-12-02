@@ -2,7 +2,7 @@
 
 # PLS-DA: Partial Least Square Discriminant Analysis Regression
 
-DESCRIPTION
+**DESCRIPTION**
 
 This project is part of our training in Data Science at the University of Lyon 2. The main objective is to develop an R package under S3 that allows to do a Partial Least Square Discriminant Analysis. Moreover we had to build an interactive web apps R-Shiny showing the results and graphs of our package.
 
@@ -20,6 +20,8 @@ Here are the different functionalities of our package that we will present in th
 * predict_pls
   * summary_predict
 
+1. Get started : Install the package
+
 In order to use our package, you should install it from Github.
 
 ```
@@ -32,7 +34,11 @@ Once the package is downloaded and successfully installed, please load it for us
 ```
 library(sisepls)
 ```
-Now you can access all available functions of the package. To prove it, we will display the documentation of our fit function. you can write in your console: 
+Now you can access all available functions of the package. 
+
+2. Getting documentation and help on the functions
+
+To prove it, we will display the documentation of our fit function. you can write in your console: 
 ```
 ?fit_pls 
 ```
@@ -40,4 +46,6 @@ to see the documentation or:
 ```
 help(fit_pls)
 ```
+3. Use the R-Shiny interactive appliaction to see  the results
+
 You can access to the R-Shiny application for interactive analysis using this link : <https://kwec.shinyapps.io/sisePLS/>
