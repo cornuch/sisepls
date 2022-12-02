@@ -63,8 +63,6 @@ train<-d$data
 test<-d$data_test
 ```
 ![split](https://user-images.githubusercontent.com/109891813/205399532-d628332f-9088-4b88-9e3c-1a2c0ce696d0.png)
-
-        https://github.com/cornuch/sisepls/issues/1#issue-1473523416
         
    3.2- `fit_pls` : This function uses a PLS-DA statistical method to find the relation between a set of explanatory quantitative variables and a categorical 
         target variable in a one-versus-all. We have overloaded the print and summary methods for a display adapted to our objects returned by fit.
@@ -74,7 +72,7 @@ objet<-fit_pls(Species~.,train,n_components=3)
 summary(objet)
 print(objet)
 ```
-       ![coefs](https://user-images.githubusercontent.com/109891813/205399665-e56ac503-62ad-422a-842e-d42aa218cb52.png)
+![coefs](https://user-images.githubusercontent.com/109891813/205399665-e56ac503-62ad-422a-842e-d42aa218cb52.png)
        
         We can also see some graphs using our R-Shiny application.
    
