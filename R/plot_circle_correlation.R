@@ -3,6 +3,7 @@
 #' Plots the circle of correlation
 #'
 #' @param objet_pls : object of class S3 inheriting from "PLS".
+#' @param i : integer, default=1. It is the index of the outcome to be selected.
 #'
 #' @importFrom graphics abline arrows symbols text par legend segments
 #'
@@ -15,12 +16,18 @@
 #' objet<-fit_pls(Species~.,train,n_components=4)
 #' plot_circle_correlation(objet)
 
-plot_circle_correlation<-function(objet_pls){
+plot_circle_correlation<-function(objet_pls,i=1){
 
   #Recovery of the explanatory variables
   X<-objet_pls[[1]]$X
-  x1<-as.matrix(objet_pls[[1]]$Matrix_correlation[1][1:nrow(objet_pls[[1]]$Matrix_correlation)-1,])
-  y1<-as.matrix(objet_pls[[1]]$Matrix_correlation[2][1:nrow(objet_pls[[1]]$Matrix_correlation)-1,])
+  Y_dummy<-objet_pls[[1]]$Ydum
+  x1<-as.matrix(objet_pls[[i]]$Matrix_correlation[1][1:nrow(objet_pls[[1]]$Matrix_correlation)-1,])
+  y1<-as.matrix(objet_pls[[i]]$Matrix_correlation[2][1:nrow(objet_pls[[1]]$Matrix_correlation)-1,])
+
+  #Check if i is appropriate (i<= number of outcomes)
+  if (i>ncol(Y_dummy)){
+    stop("You have to choose an integer between 1 and the number of outcomes for the target variable")
+  }
 
  #Map of variables correlation on the two first components
   plot(x1,y1,xlim=c(-3,+3),ylim=c(-3,3),xlab="th1 component",ylab="th2 component",main="Correlation map of explanatories \n for the two first components",type="n")

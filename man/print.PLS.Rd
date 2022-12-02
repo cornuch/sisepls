@@ -36,11 +36,11 @@ d<-train_test_splits(iris,0.7)
 train<-d$data_train
 objet<-fit_pls(Species~.,train,n_components=4)
 print(objet)
-summary(objet)$RSS
+print(objet)$RSS
 
 m<-train_test_splits(iris,0.8)
 train1<-m$data_train
 obj<-fit_pls(Species~Petal.Length+Sepal.Width,train1,n_components=2)
-summary(obj)
-summary(objet)$Ah
+print(obj)
+print(objet)$Ah
 }

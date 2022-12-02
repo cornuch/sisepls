@@ -4,10 +4,12 @@
 \alias{plot_circle_correlation}
 \title{Circle of correlation}
 \usage{
-plot_circle_correlation(objet_pls)
+plot_circle_correlation(objet_pls, i = 1)
 }
 \arguments{
 \item{objet_pls}{: object of class S3 inheriting from "PLS".}
+
+\item{i}{: integer, default=1. It is the index of the outcome to be selected.}
 }
 \value{
 the graph of the circle of correlation for all the features.

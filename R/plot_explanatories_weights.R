@@ -28,10 +28,10 @@ plot_explanatories_weights<-function(objet_pls,i=1){
   }
 
   #Map of the weights on the two first components
-  wsh1<-as.matrix(objet_pls[[i]]$W_star[1])
-  wsh2<-as.matrix(objet_pls[[i]]$W_star[2])
-  plot(wsh1,wsh2,xlim=c(min(wsh1),max(wsh1)),ylim=c(min(wsh2),max(wsh2)),type="n",xlab="Wh[1]",ylab="Wh[2]",main=paste("Map of variables weights \n for the outcome",colnames(as.data.frame(objet_pls[[1]]$Ydum))[i],"versus rest"))
+  ah1<-as.matrix(objet_pls[[i]]$ah[1])
+  ah2<-as.matrix(objet_pls[[i]]$ah[2])
+  plot(ah1,ah2,xlim=c(min(ah1),max(ah1)),ylim=c(min(ah2),max(ah2)),type="n",xlab="ah[1]",ylab="ah[2]",main=paste("Map of variables weights \n for the outcome",colnames(as.data.frame(objet_pls[[1]]$Ydum))[i],"versus rest"))
   abline(h=0,v=0)
-  text(wsh1,wsh2,colnames(X),cex=0.5)
+  text(ah1,ah2,colnames(X),cex=0.5)
 
 }

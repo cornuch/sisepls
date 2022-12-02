@@ -2,24 +2,21 @@
 % Please edit documentation in R/plot_individuals_components.R
 \name{plot_individuals_components}
 \alias{plot_individuals_components}
-\title{Maps of individuals according to the first two components}
+\title{Maps individuals components}
 \usage{
 plot_individuals_components(objet_pls, i = 1)
 }
 \arguments{
-\item{objet_pls}{: object of class S3 inheriting from "PLS".}
+\item{objet_pls}{is a class S3}
 
-\item{i}{: integer, default=1. It is the index of the outcome to be selected.}
+\item{i}{is an integer}
 }
 \value{
-a scatter plot of the individuals according to the first two components.
+plot
 }
 \description{
-Plots the individuals in relation with the first two components.
+Maps individuals components
 }
 \examples{
-d<-train_test_splits(iris,0.7)
-train<-d$data_train
-objet<-fit_pls(Species~.,train,n_components=4)
-plot_individuals_components(objet,i=2)
+plot_individuals_components(fit_pls(Species~.,iris,n_components=4),i=2)
 }

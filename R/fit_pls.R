@@ -140,8 +140,8 @@ fit_pls<-function(formule,data,n_components=2){
   Y_dummy<-ydummy(Y)
 
   #scale matrix X and dummy matrix
-  X0<-xscale(X)
-  Y0<-xscale(Y_dummy)
+  X0<-xscale(X,reduce=FALSE)
+  Y0<-xscale(Y_dummy,reduce=FALSE)
 
   #function that compute the PLS1 Regression for one outcome versus the rest of the outcomes
   fit_one_simple<-function(f,X,Y,Y_dummy,X0,Y0,modalite,n_components){

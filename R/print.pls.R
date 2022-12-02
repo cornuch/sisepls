@@ -26,13 +26,13 @@
 #' train<-d$data_train
 #' objet<-fit_pls(Species~.,train,n_components=4)
 #' print(objet)
-#' summary(objet)$RSS
+#' print(objet)$RSS
 #'
 #' m<-train_test_splits(iris,0.8)
 #' train1<-m$data_train
 #' obj<-fit_pls(Species~Petal.Length+Sepal.Width,train1,n_components=2)
-#' summary(obj)
-#' summary(objet)$Ah
+#' print(obj)
+#' print(objet)$Ah
 
 print.PLS<-function(x,...){
   objet_pls<-x
@@ -65,10 +65,6 @@ print.PLS<-function(x,...){
     PRESSall<-rbind(PRESSall,as.data.frame(objet_pls[[j]]$PRESS))
   }
 
-  #Transform matrix in data frame
-  # Chall<-as.data.frame(Chall)
-  # PRESSall<-as.data.frame(PRESSall)
-  # RSSall<-as.data.frame(RSSall)
   #Give a columns name
   names(Chall)<-colonne
   names(RSSall)<-colonne
