@@ -60,17 +60,17 @@ In order to test our functions, we will work with the iris dataset. It consists 
 ```  
 d<-train_test_splits(irirs,0.8)
 train<-d$data
-        test<-d$data_test
-        `
+test<-d$data_test
+```
         
    3.2- `fit_pls` : This function uses a PLS-DA statistical method to find the relation between a set of explanatory quantitative variables and a categorical 
         target variable in a one-versus-all. We have overloaded the print and summary methods for a display adapted to our objects returned by fit.
         
-
-        objet<-fit_pls(Species~.,train,n_components=3)
-        summary(objet)
-        print(objet)
-
+```
+objet<-fit_pls(Species~.,train,n_components=3)
+summary(objet)
+print(objet)
+```
         
         We can also see some graphs using our R-Shiny application.
    
@@ -78,10 +78,10 @@ train<-d$data
    
         We can visualize using our R-Shiny the confiusion matrix and some measures like the correlation coeffifient of Matthews.
         
-        `
-        pred<-predict_pls(objet,test,type=2)
-        summary_predict(pred)
-        `
+```
+pred<-predict_pls(objet,test,type=2)
+summary_predict(pred)
+```
    
 4. **R-Shiny interactive web application**
 
