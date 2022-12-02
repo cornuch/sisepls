@@ -52,7 +52,7 @@ help(fit_pls)
 ```
 3. **The functionnalities**
 
-   3.1- [color=#26B260]train_test_splits : The train_test_splits function takes a data frame and returns two data frames (one data frame containing the training data set
+   3.1- <span style="color:blue">train_test_splits : The train_test_splits function takes a data frame and returns two data frames (one data frame containing the training data set
         training data set $data_train and the test data $data_test randomly drawn). The parameter is the percentage of data from the data frame taken to    
         construct the training dataset.
         
