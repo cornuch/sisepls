@@ -101,3 +101,4 @@ summary_predict(pred)
 4. **R-Shiny interactive web application**
 
 You can access to the R-Shiny application for interactive analysis using this link : <https://kwec.shinyapps.io/sisePLS/>
+
