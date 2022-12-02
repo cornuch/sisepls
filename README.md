@@ -73,7 +73,9 @@ summary(objet)
 print(objet)
 ```
 ![coefs](https://user-images.githubusercontent.com/109891813/205399665-e56ac503-62ad-422a-842e-d42aa218cb52.png)
-       
+
+![R2](https://user-images.githubusercontent.com/109891813/205400103-61612471-3f6b-4fde-8d93-7203b766560f.png) 
+
         We can also see some graphs using our R-Shiny application.
    
    3.3- `predict_pls` : This function gives the predicted class for an observation and also the propabilities 
