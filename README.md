@@ -83,6 +83,8 @@ print(objet)
 ![cercle](https://user-images.githubusercontent.com/109891813/205400700-59528231-10a5-4e23-8354-d5c437e4df33.png)
 
 ![individus](https://user-images.githubusercontent.com/109891813/205400814-263749ad-6d49-491a-ba52-f2d924d554a8.png)
+
+![Q2](https://user-images.githubusercontent.com/109891813/205400905-b29b2668-1a23-4ab7-b400-be9b78bfae07.png)
    
    3.3- `predict_pls` : This function gives the predicted class for an observation and also the propabilities 
    
