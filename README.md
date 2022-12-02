@@ -62,6 +62,8 @@ d<-train_test_splits(irirs,0.8)
 train<-d$data
 test<-d$data_test
 ```
+![split](https://user-images.githubusercontent.com/109891813/205399532-d628332f-9088-4b88-9e3c-1a2c0ce696d0.png)
+
         https://github.com/cornuch/sisepls/issues/1#issue-1473523416
         
    3.2- `fit_pls` : This function uses a PLS-DA statistical method to find the relation between a set of explanatory quantitative variables and a categorical 
