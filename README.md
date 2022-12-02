@@ -79,6 +79,11 @@ In order to test our functions, we will work with the iris dataset. It consists 
    3.3- `predict_pls` : This function gives the predicted class for an observation and also the propabilities 
    
         We can visualize using our R-Shiny the confiusion matrix and some measures like the correlation coeffifient of Matthews.
+        
+        ```
+        pred<-predict_pls(objet,test,type=2)
+        summary_predict(pred)
+        ```
    
 4. **R-Shiny interactive web application**
 
