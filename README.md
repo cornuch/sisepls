@@ -52,11 +52,13 @@ help(fit_pls)
 ```
 3. **The functionnalities**
 
-   1.train_test_splits
+   3.1- [color=#26B260]train_test_splits : The train_test_splits function takes a data frame and returns two data frames (one data frame containing the training data set
+        training data set $data_train and the test data $data_test randomly drawn). The parameter is the percentage of data from the data frame taken to    
+        construct the training dataset.
+        
+   3.2- fit_pls
    
-   2.fit_pls
-   
-   3.predict_pls 
+   3.3- predict_pls 
    
 4. **R-Shiny interactive web application**
 
