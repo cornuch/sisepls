@@ -33,6 +33,7 @@ plot_Q2<-function(objet_pls){
   #and y = Q2 values for each "component"
   dq2<-cbind(data.frame(c(1:xmax)),t(objet_pls[[1]]$Q2))
   names(dq2)<-c("n","Q2")
+
   #plot of Q2 on all components for the first outcome versus all
   plot(dq2$n,dq2$Q2,type="b",xlim=c(0,xmax),ylim=c(0,1),col="black",xlab="Number of components",ylab="",main="Q2")
   abline(h=0.0975,col="red")
@@ -46,5 +47,4 @@ plot_Q2<-function(objet_pls){
       plot(dq2$n,dq2$Q2,type="b",xlim=c(0,xmax),ylim=c(0,1),xlab="",ylab="",col=couleur[i])
     }
   }
-
 }

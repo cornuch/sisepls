@@ -32,6 +32,11 @@ predict_pls<-function(objet_pls,newdata,type=1){
     stop("predict_pls required objet=fit_pls(), newdata")
   }
 
+  #check the consistency of the class
+  if(!is.data.frame(newdata)){
+    stop("The data source must be a data frame")
+  }
+
   # Check if type corresponds to the format required
   if(type!=1 & type!=2){
     stop("type must be equal to 1 ou 2")
