@@ -50,10 +50,14 @@ to see the documentation or:
 ```
 help(fit_pls)
 ```
-3. The functionnalities
-   1.Train_test_splits
+3. **The functionnalities**
+
+   1.train_test_splits
+   
    2.fit_pls
+   
    3.predict_pls 
+   
 4. **R-Shiny interactive web application**
 
 You can access to the R-Shiny application for interactive analysis using this link : <https://kwec.shinyapps.io/sisePLS/>
