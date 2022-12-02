@@ -74,7 +74,8 @@ objet<-fit_pls(Species~.,train,n_components=3)
 summary(objet)
 print(objet)
 ```
-        
+       ![coefs](https://user-images.githubusercontent.com/109891813/205399665-e56ac503-62ad-422a-842e-d42aa218cb52.png)
+       
         We can also see some graphs using our R-Shiny application.
    
    3.3- `predict_pls` : This function gives the predicted class for an observation and also the propabilities 
