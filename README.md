@@ -20,7 +20,9 @@ Here are the different functionalities of our package that we will present in th
 * predict_pls
   * summary_predict
 
-1. Get started : Install the package
+---
+
+1. **Install the package**
 
 In order to use our package, you should install it from Github.
 
@@ -36,7 +38,7 @@ library(sisepls)
 ```
 Now you can access all available functions of the package. 
 
-2. Getting documentation and help on the functions
+2. **Documentations and help**
 
 To prove it, we will display the documentation of our fit function. you can write in your console: 
 ```
@@ -46,6 +48,6 @@ to see the documentation or:
 ```
 help(fit_pls)
 ```
-3. Use the R-Shiny interactive appliaction to see  the results
+3. **R-Shiny interactive web application**
 
 You can access to the R-Shiny application for interactive analysis using this link : <https://kwec.shinyapps.io/sisePLS/>
