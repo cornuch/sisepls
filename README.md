@@ -76,6 +76,8 @@ print(objet)
 
 ![R2](https://user-images.githubusercontent.com/109891813/205400103-61612471-3f6b-4fde-8d93-7203b766560f.png) 
 
+![Q2](https://user-images.githubusercontent.com/109891813/205400220-05cc20f5-c011-412a-b0ce-63ec06ef0ef9.png)
+
         We can also see some graphs using our R-Shiny application.
    
    3.3- `predict_pls` : This function gives the predicted class for an observation and also the propabilities 
