@@ -96,7 +96,8 @@ summary_predict(pred)
 ```
 ![pred](https://user-images.githubusercontent.com/109891813/205401209-66ef1045-a1ea-489d-a93d-eaf5c6bba65b.png)
 
-   
+![confusion](https://user-images.githubusercontent.com/109891813/205401423-8045fd7f-302d-4764-a239-f9ae48036515.png)
+
 4. **R-Shiny interactive web application**
 
 You can access to the R-Shiny application for interactive analysis using this link : <https://kwec.shinyapps.io/sisePLS/>
