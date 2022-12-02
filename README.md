@@ -12,12 +12,19 @@ and the explanatory variables.
 Here are the different functionalities of our package that we will present in the following lines:
   
     * train_test_splits
+    
     * fit_pls
+    
       *summary.PLS
+      
       *print.PLS
+      
       *plot_circle_correlation
+      
       *plot_explanatories
+      
    * predict_pls
+
       *summary_predict
 
 In order to use our package, you should install it from Github.
