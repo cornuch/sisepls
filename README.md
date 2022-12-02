@@ -94,6 +94,8 @@ print(objet)
 pred<-predict_pls(objet,test,type=2)
 summary_predict(pred)
 ```
+![pred](https://user-images.githubusercontent.com/109891813/205401209-66ef1045-a1ea-489d-a93d-eaf5c6bba65b.png)
+
    
 4. **R-Shiny interactive web application**
 
