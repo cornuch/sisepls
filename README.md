@@ -16,7 +16,9 @@ Here are the different functionalities of our package that we will present in th
   * print.PLS
   * plot_circle_correlation
   * plot_explanatories
-      
+  * plot_individuals
+  * plot_individuals_components
+  * plot_Q2
 * predict_pls
   * summary_predict
 
@@ -48,6 +50,10 @@ to see the documentation or:
 ```
 help(fit_pls)
 ```
-3. **R-Shiny interactive web application**
+3. The functionnalities
+   1.Train_test_splits
+   2.fit_pls
+   3.predict_pls 
+4. **R-Shiny interactive web application**
 
 You can access to the R-Shiny application for interactive analysis using this link : <https://kwec.shinyapps.io/sisePLS/>
