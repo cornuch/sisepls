@@ -29,9 +29,9 @@ Here are the different functionalities of our package that we will present in th
 
 In order to use our package, you should install it from Github.
 
-'''
+```
 library(devtools)
-'''
+```
 
 install_github("cornuch/sisepls")
 
