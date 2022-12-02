@@ -29,7 +29,7 @@ library(devtools)
 install_github("cornuch/sisepls")
 ```
 Once the package is downloaded and successfully installed, please load it for use.
-````
+```
 library(sisepls)
 ```
 Now you can access all available functions of the package. To prove it, we will display the documentation of our fit function. you can write in your console: 
