@@ -36,27 +36,6 @@ summary.PLS<-function(x, ...){
   Y_dummy<-objet_pls[[1]]$Ydum
   r<-nrow(objet_pls[[1]]$all_coefs_regression)
 
-  if (ncol(Y_dummy)==2){
-    coefsall<-data.frame(matrix(ncol=0,nrow=r))
-    corall<-objet_pls[[1]]$Matrix_correlation
-    r2all<-(objet_pls[[1]]$Matrix_correlation)^2
-    Q2all<-as.data.frame(objet_pls[[1]]$Q2)
-
-    #Names of columns for Q2 data frame
-    colQ2<-c()
-    for (i in 1: ncol(corall)){
-      colQ2[i]<-paste("component th",i)
-    }
-
-    #Names of the columns of this data frame
-    names(Q2all)<-colQ2
-
-    #name of the columns for the regression coefficients data frame
-    names(coefsall)<-colnames(Y_dummy)
-
-    #list of the results given by the summary function
-    resultat<-list("Coefs"=coefsall,"Correlation"=corall,"R2"=r2all,"Q2"=Q2all)
-  }else{
     coefsall<-data.frame(matrix(ncol=0,nrow=r))
     corall<-objet_pls[[1]]$Matrix_correlation
     r2all<-(objet_pls[[1]]$Matrix_correlation)^2
@@ -88,6 +67,5 @@ summary.PLS<-function(x, ...){
 
     #list of the results given by the summary function
     resultat<-list("Coefs"=coefsall,"Correlation"=corall,"R2"=r2all,"Q2"=Q2all)
-  }
   return(resultat)
 }
