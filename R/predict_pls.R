@@ -79,7 +79,7 @@ predict_pls<-function(objet_pls,newdata,type=1){
   Y_predict<-as.data.frame(Y_predict,row.names = rownames(X))
   names(Y_predict)<-colonnes
   for (j in (1:nrow(X))){
-    Y_predict[j,4]<-names(Y_predict)[which.max(Y_predict[j,])]
+    Y_predict[j,nlevels(Y)+1]<-names(Y_predict)[which.max(Y_predict[j,])]
   }
 
   #softmax for probability score prediction
