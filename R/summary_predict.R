@@ -42,7 +42,7 @@ summary_predict<-function(pls_predict,beta=2){
       #fullfilled the confusion matrix
       for (i in 1:nlevels(pls_predict$Y_test)){
         for (j in 1:nlevels(pls_predict$Y_test)){
-          if((((pls_predict$Y_test[k]==levels(pls_predict$Y_test)[i])==TRUE) & ((pls_predict$Y_predict[[4]][k]==levels(pls_predict$Y_test)[j])==TRUE))==TRUE){
+          if((((pls_predict$Y_test[k]==levels(pls_predict$Y_test)[i])==TRUE) & ((pls_predict$Y_predict[[3]][k]==levels(pls_predict$Y_test)[j])==TRUE))==TRUE){
             M[i,j]<-M[i,j]+1
           }
         }
