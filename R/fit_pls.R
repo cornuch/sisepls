@@ -285,9 +285,8 @@ fit_pls<-function(formule,data,n_components=2){
 
     #Computing the coefficients of the regression of y on x
     for (i in 1:ncol(X)){
-      si<-apply(X,2,sd)[i]
       mi<-apply(X,2,mean)[i]
-      Coefs[i,1]<-Ah_df[i,n_components]*sd(Y_dummy[,modalite])/si
+      Coefs[i,1]<-Ah_df[i,n_components]
       #constant
       constant<-constant-Coefs[i,1]*mi
     }
